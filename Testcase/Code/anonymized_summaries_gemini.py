@@ -403,7 +403,7 @@ OUTPUT_SUMMARIES_FILE = 'anonymized_summaries.json'
 
 # --- Gemini API Configuration ---
 # We leave the API key blank, as it will be provided by the environment.
-API_KEY = "AIzaSyDbHfMRiMtRoG9xHGRHOCdKCkr8cBVjrOo"
+API_KEY = ""
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key={API_KEY}"
 SYSTEM_PROMPT = (
     "You are an expert principal engineer. Your task is to write a single, "
