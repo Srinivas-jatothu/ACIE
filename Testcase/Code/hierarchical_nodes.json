@@ -1,0 +1,77 @@
+{
+    "..\\Shopping\\config.py": [],
+    "..\\Shopping\\main_service.py": [
+        {
+            "type": "ClassDef",
+            "name": "CartService"
+        },
+        {
+            "type": "MethodDef",
+            "name": "CartService.validate_cart"
+        },
+        {
+            "type": "MethodDef",
+            "name": "CartService.calculate_total"
+        },
+        {
+            "type": "ClassDef",
+            "name": "OrderService"
+        },
+        {
+            "type": "MethodDef",
+            "name": "OrderService.__init__"
+        },
+        {
+            "type": "MethodDef",
+            "name": "OrderService.finalize_order"
+        }
+    ],
+    "..\\Shopping\\models.py": [
+        {
+            "type": "ClassDef",
+            "name": "User"
+        },
+        {
+            "type": "MethodDef",
+            "name": "User.__init__"
+        },
+        {
+            "type": "ClassDef",
+            "name": "Item"
+        },
+        {
+            "type": "MethodDef",
+            "name": "Item.__init__"
+        },
+        {
+            "type": "ClassDef",
+            "name": "Cart"
+        },
+        {
+            "type": "MethodDef",
+            "name": "Cart.__init__"
+        },
+        {
+            "type": "ClassDef",
+            "name": "Order"
+        },
+        {
+            "type": "MethodDef",
+            "name": "Order.__init__"
+        }
+    ],
+    "..\\Shopping\\payment_service.py": [
+        {
+            "type": "ClassDef",
+            "name": "PaymentService"
+        },
+        {
+            "type": "MethodDef",
+            "name": "PaymentService.__init__"
+        },
+        {
+            "type": "MethodDef",
+            "name": "PaymentService.process_payment"
+        }
+    ]
+}
