@@ -3,75 +3,92 @@
     "..\\Shopping\\main_service.py": [
         {
             "type": "ClassDef",
-            "name": "CartService"
+            "name": "CartService",
+            "anonymized_source_code": "class CartService:"
         },
         {
             "type": "MethodDef",
-            "name": "CartService.validate_cart"
+            "name": "CartService.validate_cart",
+            "anonymized_source_code": "def validate_cart(self, cart: Cart) -> bool:\n    \"\"\"Ensures the cart is valid for checkout.\"\"\"\n    num_items = sum((item.quantity for item in cart.items))\n    if 0 < num_items <= config.MAX_CART_ITEMS:\n        print('Cart validation successful.')\n        return True\n    print('Cart validation failed: Item count is invalid.')\n    return False"
         },
         {
             "type": "MethodDef",
-            "name": "CartService.calculate_total"
+            "name": "CartService.calculate_total",
+            "anonymized_source_code": "def calculate_total(self, cart: Cart) -> float:\n    \"\"\"Calculates the total cost of all items in the cart.\"\"\"\n    total = sum((item.price * item.quantity for item in cart.items))\n    return round(total, 2)"
         },
         {
             "type": "ClassDef",
-            "name": "OrderService"
+            "name": "OrderService",
+            "anonymized_source_code": "class OrderService:"
         },
         {
             "type": "MethodDef",
-            "name": "OrderService.__init__"
+            "name": "OrderService.__init__",
+            "anonymized_source_code": "def __init__(self):\n    self.cart_service = CartService()\n    self.payment_service = PaymentService()\n    self.db_connection = [DATABASE_CONNECTION_STRING]"
         },
         {
             "type": "MethodDef",
-            "name": "OrderService.finalize_order"
+            "name": "OrderService.finalize_order",
+            "anonymized_source_code": "def finalize_order(self, cart: Cart) -> Order:\n    \"\"\"\n        Coordinates the checkout process.\n\n        This method validates the cart, calculates the total, processes the\n        payment, and finally creates an order record. It represents a complex\n        business process with multiple dependencies.\n        \"\"\"\n    print(f'\\nFinalizing order for user {cart.user.name}...')\n    if not self.cart_service.validate_cart(cart):\n        return Order('failed-order', cart, 0, 'FAILED_VALIDATION')\n    total_amount = self.cart_service.calculate_total(cart)\n    print(f'Calculated total: {total_amount} {config.DEFAULT_CURRENCY}')\n    payment_successful = self.payment_service.process_payment(amount=total_amount, currency=config.DEFAULT_CURRENCY)\n    if payment_successful:\n        final_order = Order('order_98765', cart, total_amount, 'COMPLETED')\n        print(f'Order {final_order.order_id} completed successfully.')\n        print(f\"Saving order to database at: {self.db_connection.split('@')[1]}\")\n        return final_order\n    else:\n        final_order = Order('order_98765', cart, total_amount, 'FAILED_PAYMENT')\n        print('Order failed due to payment issue.')\n        return final_order"
         }
     ],
     "..\\Shopping\\models.py": [
         {
             "type": "ClassDef",
-            "name": "User"
+            "name": "User",
+            "anonymized_source_code": "class User:"
         },
         {
             "type": "MethodDef",
-            "name": "User.__init__"
+            "name": "User.__init__",
+            "anonymized_source_code": "def __init__(self, user_id: int, name: str):\n    self.user_id = user_id\n    self.name = name"
         },
         {
             "type": "ClassDef",
-            "name": "Item"
+            "name": "Item",
+            "anonymized_source_code": "class Item:"
         },
         {
             "type": "MethodDef",
-            "name": "Item.__init__"
+            "name": "Item.__init__",
+            "anonymized_source_code": "def __init__(self, product_id: str, price: float, quantity: int):\n    self.product_id = product_id\n    self.price = price\n    self.quantity = quantity"
         },
         {
             "type": "ClassDef",
-            "name": "Cart"
+            "name": "Cart",
+            "anonymized_source_code": "class Cart:"
         },
         {
             "type": "MethodDef",
-            "name": "Cart.__init__"
+            "name": "Cart.__init__",
+            "anonymized_source_code": "def __init__(self, cart_id: str, user: User, items: List[Item]):\n    self.cart_id = cart_id\n    self.user = user\n    self.items = items"
         },
         {
             "type": "ClassDef",
-            "name": "Order"
+            "name": "Order",
+            "anonymized_source_code": "class Order:"
         },
         {
             "type": "MethodDef",
-            "name": "Order.__init__"
+            "name": "Order.__init__",
+            "anonymized_source_code": "def __init__(self, order_id: str, cart: Cart, total_amount: float, status: str):\n    self.order_id = order_id\n    self.cart = cart\n    self.total_amount = total_amount\n    self.status = status"
         }
     ],
     "..\\Shopping\\payment_service.py": [
         {
             "type": "ClassDef",
-            "name": "PaymentService"
+            "name": "PaymentService",
+            "anonymized_source_code": "class PaymentService:"
         },
         {
             "type": "MethodDef",
-            "name": "PaymentService.__init__"
+            "name": "PaymentService.__init__",
+            "anonymized_source_code": "def __init__(self):\n    self.api_key = [GATEWAY_API_KEY]\n    print(f'PaymentService initialized for Stripe.')"
         },
         {
             "type": "MethodDef",
-            "name": "PaymentService.process_payment"
+            "name": "PaymentService.process_payment",
+            "anonymized_source_code": "def process_payment(self, amount: float, currency: str) -> bool:\n    \"\"\"\n        Simulates processing a payment through a third-party gateway.\n\n        In a real-world scenario, this would make an API call to Stripe\n        using the secret API key. The successful execution of this function\n        is fundamental to the checkout flow.\n        \"\"\"\n    print(f'Attempting to process payment of {amount} {currency}...')\n    if self.api_key.startswith(\"[GATEWAY_API_KEY_PREFIX]\"):\n        print('Stripe payment successful using the provided API key.')\n        return True\n    else:\n        print('Payment failed: Invalid Stripe API key.')\n        return False"
         }
     ]
 }

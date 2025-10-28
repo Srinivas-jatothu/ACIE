@@ -1,0 +1,94 @@
+{
+  "..\\Shopping\\config.py": [],
+  "..\\Shopping\\main_service.py": [
+    {
+      "type": "ClassDef",
+      "name": "CartService",
+      "summary": "A class definition for 'CartService' (1 lines). It appears to manage logic related to 'Cart'. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "CartService.validate_cart",
+      "summary": "It returns a value. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "CartService.calculate_total",
+      "summary": "It returns a value. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "ClassDef",
+      "name": "OrderService",
+      "summary": "A class definition for 'OrderService' (1 lines). It appears to manage logic related to 'Order'. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "OrderService.__init__",
+      "summary": "It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "OrderService.finalize_order",
+      "summary": "It returns a value. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    }
+  ],
+  "..\\Shopping\\models.py": [
+    {
+      "type": "ClassDef",
+      "name": "User",
+      "summary": "A class definition for 'User' (1 lines). It appears to manage logic related to 'User'. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "User.__init__",
+      "summary": "It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "ClassDef",
+      "name": "Item",
+      "summary": "A class definition for 'Item' (1 lines). It appears to manage logic related to 'Item'. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "Item.__init__",
+      "summary": "It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "ClassDef",
+      "name": "Cart",
+      "summary": "A class definition for 'Cart' (1 lines). It appears to manage logic related to 'Cart'. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "Cart.__init__",
+      "summary": "It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "ClassDef",
+      "name": "Order",
+      "summary": "A class definition for 'Order' (1 lines). It appears to manage logic related to 'Order'. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "Order.__init__",
+      "summary": "It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    }
+  ],
+  "..\\Shopping\\payment_service.py": [
+    {
+      "type": "ClassDef",
+      "name": "PaymentService",
+      "summary": "A class definition for 'PaymentService' (1 lines). It appears to manage logic related to 'Payment'. It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "PaymentService.__init__",
+      "summary": "It might use an internal key like 'PROJECT_PHOENIX_KEY'."
+    },
+    {
+      "type": "MethodDef",
+      "name": "PaymentService.process_payment",
+      "summary": "It returns a value. It may use a secret key like sk_live_abc123... and handle [CURRENCY]."
+    }
+  ]
+}
